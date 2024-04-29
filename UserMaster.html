@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/hover-min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/GeneralZone.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        .fa-phone
+        {
+            color:white;font-weight:bold;
+        }
+        #head
+        {
+            color:darkred;
+            font-weight:bolder;
+            font-family:"Fugaz one";
+            font-size:25px;
+            margin-top:0.7%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" id="header1">
+            <div class="col-sm-3">
+                <span class="fa fa-phone">0551 2255551 </span>
+            </div>
+            <div class="col-sm-6" id="header11">
+                Welcome in maharana Praptap polytechnic Gorakhpur
+            </div>
+            <div class="col-sm-3" id="header11">
+                <span class="fa fa-envelope-o">mppolygorakhour@rediffmail.com</span>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row">
+       <div class="col-sm-2">
+           <img src="{% static 'images/logo.jpg' %}"
+           style="height: 110px;width: 100%">
+       </div>
+       <div class="col-sm-8" id="head">
+           <b>MAHARANA PRATAP POLYTECHNIC</b><br>
+           <h4>GORAKHNATH GORAKHPUR (U.P) INDIA</h4>
+           <h4>महाराणा प्रताप पॉलिटेक्निक गोरखनाथ गोरखपुर </h4>
+       </div>
+        <div class="col-sm-2">
+            <img src="{% static 'images/yogi.jpg' %}"
+              style="height:110px;width:100%">
+        </div>
+    </div>
+    <!--------------- start code of menu bar---------------------->
+    <div class="row">
+        <nav class="navbar navbar-default">
+  <div class="container-fluid" style="background:darkred;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-
+      navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <div class="collaspse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav hvr hvr-">
+             <li><a href="/UserZone/SDashboard"style="color:white;"class="hvr hvr-bob">Dashboard</a></li>
+             <li><a href="/UserZone/myprofile"style="color:white;"class="hvr hvr-bob">Myprofile</a></li>
+             <li><a href="/UserZone/feedback"style="color:white;"class="hvr hvr-bob">Feedback</a></li>
+            <li><a href="/UserZone/schangepassword"style="color:white;"class="hvr hvr-bob">Changepassword</a></li>
+           <li><a href="/UserZone/logout"style="color:white;"class="hvr hvr-bob">Logout</a></li>
+
+      </ul>
+    </div>
+    </div><!- /.navbar-collapse -->
+         </div><!-- /.container-fluid -->
+</nav>
+    </div>
+    <!----------------- end code of menu bar------------------------------------------->
+    <!---------------code for content area--------------------------->
+</div>
+    <div class="row" style="min-height:400px">
+        {% block contentarea %}
+        {% endblock %}
+    </div>
+<!-----------------end code for content area---------------------------------------->
+<!-------------------code for footer area-------------------------------->
+<div class="row" style="background-color:darkred">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8" style="min-height:100px;
+     background-color:darkred;color:white;text-align:center">
+        Copyright &copy; 2020-All Rights<br>
+        Reserved-MP Polytechnic-Gorakhpur(U.P).<br>
+        Email:mppolygorakhpur@rediffmail.com<br>
+        Designed by Riya Jaiswal.
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<!------------------end code for footer area----------------------------------------->
+</div>
+</body>
+</html>
+</body>
+</html>

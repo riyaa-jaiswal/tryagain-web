@@ -1,0 +1,94 @@
+{% extends 'userZone/UserMaster.html' %}
+{% block contentarea %}
+    <style>
+    .fa-star,.fa-star-half-full,.fa-star-o
+    {
+        font-size:45px;
+        color:orangered;
+    }
+    </style>
+    <div class="col-sm-12">
+    <div class="col-sm-4"></div>
+        <form action="" method="post">
+            <{% csrf_token %}
+    <div class="col-sm-4 panel panel-body" style="border:2px solid coral">
+        Rate Here<br>
+        <span class="fa fa-star-o"id="s7"></span>
+          <span class="fa fa-star-half-full" id="s6" style="display: none"></span>
+        <span class="fa fa-star" id="s2"></span>
+        <span class="fa fa-star" id="s3"></span>
+        <span class="fa fa-star" id="s4"></span>
+        <span class="fa fa-star" id="s5"></span>
+
+
+        <span class="fa fa-star" id="sp1">1</span>
+        <span class="fa fa-star" id="sp2">2</span>
+        <span class="fa fa-star" id="sp3">3</span>
+        <span class="fa fa-star" id="sp4">4</span>
+        <span class="fa fa-star" id="sp5">5</span>
+
+        <br>
+        <input type="hidden" name="txttotal" id="txttotal"/>
+        Write Your Reviews
+        <textarea class="form-control" name="txtmsg" style="height:160px">
+
+
+        </textarea>
+        <br>
+        <input type="submit" class="form-control btn btn-success"/>
+
+
+    </div>
+        </form>
+        <h2>{{  Msg }}</h2>
+    <div class="col-sm-4"></div>
+    </div>
+    <script>
+    $(document).ready(function(){
+        var total;
+        $("#sp1,#sp2,#sp3,#sp4,#sp5").hide();
+        $("#s1,#s2,#s3,#s4,#s5").css("cursor","pointer");
+        $("#s7").mouseenter(function (){
+            $("#s6").show();
+             $("#s7").hide();
+        })
+         $("#s6").mouseout(function (){
+            $("#s7").show();
+             $("#s6").hide();
+        })
+        $("#s1").click(function(){
+            total=$("#sp1").text();
+            $("#s1").css("color","teal");
+            $("#s2,#s3,#s4,#s5").css("color","orangered");
+            $("#txttotal").val(total);
+            //alert(total)
+        })
+        $("#s2").click(function(){
+            total=$("#sp2").text();
+            $("#s1,#s2").css("color","teal");
+            $("#s3,#s4,#s5").css("color","orangered");
+             $("#txttotal").val(total);
+            //alert(total)
+    })
+        $("#s3").click(function(){
+            total=$("#sp3").text();
+            $("#s1,#s2,#s3").css("color","teal");
+            $("#s4,#s5").css("color","orangered");
+             $("#txttotal").val(total);
+           // alert(total)
+    })
+        $("#s4").click(function(){
+            total=$("#sp4").text();
+            $("#s1,#s2,#s3,#s4").css("color","teal");
+            $("#s5").css("color","orangered");
+             $("#txttotal").val(total);
+            //alert(total)
+    })
+        $("#s5").click(function() {
+            total = $("#sp5").text();
+            $("#s1,#s2,#s3,#s4,#s5").css("color", "teal");
+            //alert(total)
+        })
+    })
+    </script>
+{% endblock %}

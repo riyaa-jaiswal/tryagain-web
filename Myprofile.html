@@ -1,0 +1,49 @@
+{% extends 'UserZone/UserMaster.html' %}
+{% block contentarea %}
+    <div class="col-sm-12">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 panel panel-body" style="border:2px solid teal">
+            <form action="" method="post">
+                    {% csrf_token %}
+
+            <div class="col-sm-6">
+                Name
+                <input type="text" class="form-control" name="txtname" value="{{ Name }}"/>
+                Mobile
+                <input type="text" class="form-control" name="txtmobile" value="{{ Mob }}">
+                Date
+                <input type="text" class="form-control" name="txtdate" value="{{ Date }}"/>
+                Email
+                <input type="text" class="form-control" name="txtemail" value="{{ Email }}">
+                <br>
+                <input type="button" class="btn btn-danger" value="EDIT">
+                <input type="submit" class="btn btn-success" value="UPDATE">
+            </div>
+            <div class="col-sm-6">
+                Picture
+                <img src="/media/{{ Pic }}" class="img img-thumbnail" style="height:140px;width:180px">
+                <br>
+                Qualification
+                <input type="text" class="form-control" name="txtquali" value="{{ Quali }}"/>
+                <br>
+                <h3>{{ Msg }}</h3>
+            </div>
+            </form>
+        </div>
+
+
+        <div class="col-sm-3"></div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        $(".btn-success").hide();
+        $(".form-control").attr("Readonly",true);
+        $(".btn-danger").click(function () {
+            $(".form-control").attr("Readonly",false);
+            $(".btn-success").show();
+            $(".btn-danger").hide();
+            $("#txtemail").attr("ReadOnly",true);
+        })
+    })
+    </script>
+{% endblock %}
