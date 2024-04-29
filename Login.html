@@ -1,0 +1,37 @@
+{% extends 'GeneralMaster.html' %}
+{% block contentarea %}
+ <div class="col-sm-12">
+     <div class="col-sm-4"></div>
+     <div class="col-sm-4">
+         <h2>{{ Msg }}</h2>
+         <form action="" method="post">
+             {% csrf_token %}
+             User ID:
+             <input type="text" name="txtuserid" class="form-control">
+             Password:
+             <input type="password" name="txtpassword" class="form-control" id="txt1">
+             <br>
+             <input type="button" id="btn1" value="show" onclick="show()">
+             <script>
+                 function show()
+                 {
+                     var btn=document.getElementById("btn1").value;
+                     if(btn=="show")
+                     {
+                         document.getElementById("txt1").type="text";
+                         document.getElementById("btn1").value="hide";
+                     }
+                     if(btn=="hide")
+                     {
+                         document.getElementById("txt1").type="password";
+                         document.getElementById("btn1").value="show";
+                     }
+                 }
+                 </script>
+             <br>
+             <input type="submit" class="form-control btn-info" value="Login">
+             </form>
+     </div>
+     <div class="col-sm-4"></div>
+ </div>
+{% endblock %}

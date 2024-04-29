@@ -1,0 +1,40 @@
+{% extends 'GeneralMaster.html' %}
+{%  block contentarea %}
+  <div class="col-sm-12">
+      <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h3 style="color:darkred">{{ Res }}</h3>
+            <div class="col-sm-6">
+            <address>
+                <h4>Address</h4>
+        MP Polytechnic Siddharth Nagar Colony,Gorakhnath,Gorakhpur,UttarPradesh 273015 <br>
+        Copyright &copy; 2020-All Rights<br>
+        Reserved-MP Polytechnic-Gorakhpur(U.P).<br>
+        Email:mppolygorakhpur@rediffmail.com<br>
+            </address>
+            </div>
+            <div class="col-sm-6">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    NAME:
+                    <input type="text" name="txtname" required class="form-control">
+                    Email:
+                    <input type="email" name="txtemail" required class="form-control">
+                    Mobile:
+                    <input type="number" name="txtmobile" required class="form-control">
+                    Message:
+                    <textarea class="form-control" name="txtmessage" required></textarea>
+                    <br>
+                    <input type="submit" value="Enquiry now" class="form-control btn btn-success">
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+  </div>
+    <div class="col-sm-12 panel panel-body">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.8204268925792!2d83.35335694995737!
+    3d26.781993483101534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399144352a87a2b1%3A0xae735d795778b261!
+    2sMaharana%20Pratap%20Polytechnic!5e0!3m2!1sen!2sin!4v1606563157447!5m2!1sen!2sin" width="100%" height="450"
+            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+{% endblock %}

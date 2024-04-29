@@ -1,0 +1,90 @@
+{% extends 'GeneralMaster.html' %}
+{% block contentarea %}
+    <style>
+    .form-control
+    {
+        height:40px;
+        margin-top:2%;
+        margin-bottom:1%;
+        border-radius:0px;
+    }
+    .form-control:focus
+    {
+      border:1px solid darkred;
+    }
+    </style>
+    <h2 class="text-center" style="color:darkred;">Registration Form</h2>
+    <hr style="height:2px; background-color:darkred;">
+    <h3>{{ Msg }}</h3>
+    <div class="col-sm-12">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 panel panel-body" style="border:1px solid darkred">
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-sm-6 panel panel-body">
+        Name:
+        <input type="text" class="form-control" name="txtname" required />
+         Mobile:
+        <input type="text" class="form-control" name="txtmobile" required />
+        Password:
+        <input type="password" class="form-control" name="txtpass" required/>
+
+         <script>
+            function cph()
+            {
+                var v1=Math.floor(Math.random(1,8)*10);
+                var v2=Math.floor(Math.random(1,8)*10);
+                var v3=Math.floor(Math.random(1,8)*10);
+                var v4=Math.floor(Math.random(1,8)*10);
+                var v5=Math.floor(Math.random(1,8)*10);
+                total=v1+""+v2+""+v3+""+v4+""+v5;
+                $("#mycaptch").val(total);
+            }
+            $(document).ready(function(){
+                $(".form-control").attr("Autocomplete","off")
+                $("#refress").click(function (){
+                    cph();
+                })
+            })
+        </script>
+
+
+        Captch code
+        <div class="input-group">
+            <input type="text" name="txtcaptcha" id="mycaptch"  readonly class="form-control" style="width:38%;font-size:30px;color:darkred;text-decoration:line-through;"/>
+            <input type ="hidden" id="mycap">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="button" id="refress">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </button>
+            </div>
+        </div>
+        Picture:
+        <input type="file" class="form-control" name="fupic" required/>
+    </div>
+     <div class="col-sm-6 panel panel-body">
+        Email
+        <input type="email" class="form-control" name="txtemail" required />
+          Qualification
+        <select class="form-control" name="ddlqualification">
+            <option>Mtech</option>
+            <option>btech</option>
+            <option>MCA</option></select>
+            Confirm Password:
+            <input type="password" class="form-control" name="txtcpass" required/>
+{#            <br>#}
+{#            <input type="submit" class="form-control btn btn-success" value="Register now">#}
+<!-----------------captcha button---------------------------------->
+         Enter Captcha code
+         <input type="text" class="form-control" name="txtcaptchacode"/><br>
+
+<br>
+            <input type="submit" class="form-control btn btn-success" value="Register now">
+ <!------------------------------------------------------------------>
+     </div>
+
+</form>
+</div>
+<div class="col-sm-2"></div>
+</div>
+{% endblock %}
