@@ -1,0 +1,23 @@
+{% extends 'AdminZone/AdminMaster.html' %}
+{% block contentarea %}
+    <div class="col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 panel panel-body">
+        <form action="" method="post">
+            {% csrf_token %}
+            Name
+            <input type="text" name="txtname" class="form-control" value="{{ Name }}"/>
+            Email
+            <input type="text" name="txtemail" class="form-control" value={{ Email }}/">
+            Mobile
+            <input type="text" name="txtmob" class="form-control" value="{{ Mob }}"/>
+            Message
+            <input type="text" class="form-control" name="txtmsg" value="{{ Msg }}"/>
+            <br>
+            <input type="submit" class="form-control btn-success" value="Update Now"/>
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+    </div>
+    <h2>{{ Message }}</h2>
+{% endblock %}

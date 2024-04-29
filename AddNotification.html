@@ -1,0 +1,34 @@
+{% extends 'AdminZone/AdminMaster.html' %}
+{% block contentarea %}
+    {% load static %}
+    <div class="col-sm-12">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 panel panel-body">
+        Notification Name
+        <input type="text" class="form-control" id="txtname"/>
+        Notification Message
+        <textarea id="txtmsg" class="form-control" style="height:170px"></textarea>
+        <br>
+        <input type="button" value="Add Notification" class="form-control btn-success"/>
+    </div>
+    <div class="col-sm-4"></div>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $(".btn-success").click(function(){
+            var name=$("#txtname").val();
+            var msg=$("#txtmsg").val();
+            $.ajax({
+                type:"Post",
+                url:"/AdminZone/AddNotification/",
+                data:{Name:name,Msg:msg},
+                success:function (data){
+                    alert(data);
+                    $("#txtname").val("");
+                    $("#txtmsg").val("");
+                }
+            })
+        })
+    })
+    </script>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'AdminZone/AdminMaster.html' %}
+{% block contentarea %}
+    {% load static %}
+    <link href ="{% static 'css/akash.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/akash.js' %}"></script>
+    <script>
+    $(document).ready(function() {
+        $("#example").DataTable();
+    })
+
+    </script>
+    <div class="col-sm-12" style="background:white">
+    <h3 class="text text-success">View Enquiry Details</h3>
+    <hr style="height:2px;background:white">
+    {{ Tbl|safe }}
+    </div>
+{% endblock %}
